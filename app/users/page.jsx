@@ -7,8 +7,8 @@ export default async function Users() {
     return (
       <>
         <h1>Kullancılar</h1>
-        {users.map(x => (
-            <li>
+        {users.map((x, i) => (
+            <li key={i}> 
                 <Link href={`/users/${x.id}`}> {x.firstName}{x.lastName} </Link>
             </li>
         ))}

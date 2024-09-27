@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default async function useDetail({ params }) {
     const { id } = params;
     const response = await fetch(`https://dummyjson.com/users/${id}`);
@@ -21,7 +23,7 @@ export default async function useDetail({ params }) {
                 <li>{user.bloodGroup}</li>
             </ul>
 
-            <img src={user.image} alt="" />
+            <Image src={user.image} width={200} height={200} alt="resim"></Image>
         </>
     )
 }
